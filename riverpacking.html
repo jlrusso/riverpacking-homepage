@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="riverpacking.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <title>River Packing Co.</title>
+</head>
+<body>
+
+  <section id="landing-wrapper">
+    <div id="landing-overlay"></div>
+    <header>
+      <div id="header-wrapper">
+        <div id="header-logo">
+          <a href="riverpacking.html">RP</a>
+        </div>
+        <nav>
+          <ul>
+            <li id="nav-products">Products</li>
+            <li id="nav-qa">QA</li>
+            <li id="nav-about">About</li>
+            <li id="nav-contact">Contact</li>
+            <li id="nav-location"><i class="fa fa-map-marker" style="font-size:20px"></i></li>
+          </ul>
+        </nav>
+        <div id="user-entry-wrapper">
+          <ul>
+            <li class='user-entry' id='sign-in-btn'><a>Sign In</a></li>
+            <li class='user-entry' id='join-btn'><a>Join Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div id="hero-text">
+      <p>Quality produce<br/>for our customers</p>
+      <p>At River Packing, we utilize advanced technology to maximize grower output and deliver fresh produce to our customers</p>
+      <div id="learn-wrapper">
+        <button id="learn-btn">Learn More</button>
+      </div>
+    </div>
+    <div id="login-wrapper">
+      <i class="fa fa-arrow-right" id="login-arrow-right"></i>
+      <h4>SIGN IN</h4>
+      <form>
+        <input type="text" name="username" placeholder="Username" autocomplete="off">
+        <input type="password" name="password" placeholder="Password" autocomplete="off">
+        <input type="button" name="submit" value="LOGIN">
+      </form>
+      <div class="form-divider"></div>
+      <p>Don't have an account yet?</p>
+      <input type="button" value="SIGN UP" id="or-signup-btn">
+    </div>
+    <div id="sign-up-wrapper">
+      <i class="fa fa-arrow-right" id="su-arrow-right"></i>
+      <h4>SIGN UP</h4>
+      <form>
+        <input type="text" name="first" placeholder="First Name" autocomplete="off">
+        <input type="text" name="last" placeholder="Last Name" autocomplete="off">
+        <input type="text" name="username" placeholder="Username" autocomplete="off">
+        <input type="text" name="email" placeholder="Email" autocomplete="off">
+        <input type="password" name="pwd" placeholder="Password">
+        <input type="password" name="pwd-check" placeholder="Confirm Password">
+        <input type="button" name="submit" value="JOIN">
+      </form>
+      <div class="form-divider"></div>
+      <p>Already have an account?</p>
+      <p><input type="button" value="LOGIN" id="or-login-btn"></p>
+    </div>
+  </section>
+
+  <section id="why-wrap">
+    <h1 class='wrap-heading'>Why River Packing?</h1>
+    <p>
+      We offer something that many packing sheds can't, a way for growers and buyers to have access to the fruit that is being packaged and shipped that day. For example, we store and analyze data from the fruit such as size, color, damage or various types, flavor profile, among others. This enables you to see the quality of your fruit.
+    </p>
+    <!-- <img src='../images/dashboard-ex.PNG' alt='Dashboard Example'/> -->
+  </section>
+
+  <section id="products-wrapper">
+    <h1 class='wrap-heading'>Products</h1>
+    <div class="product-grid-outer">
+      <div class="product-text-img">
+        <div class="text-wrapper">
+          <p>Cherries</p>
+          <p>
+            We start the summer by packing and shipping some of the best cherries from Sourthern California to the San Joaquin valley. Thanks to software provided by Unitec, we are able to maximize the concentration of high quality fruit. Besides the array of nutritional benefits, common varieties include Brooks, Royal Hazel, Tulare, Coral, Chelan, Bing, Laping, and Rainier.
+          </p>
+          <p>
+            <button class="data-btn">View Data</button>
+          </p>
+        </div>
+        <div class="product-img-wrapper">
+          <div class="img-wrapper-inner">
+            <img src="../images/cherry-bunch.jpeg" alt="Cherry Bunch">
+          </div>
+        </div>
+        <div class='hell-wrap'>
+          <i class='fa fa-arrow-left' id='cherry-arrow' style='font-size:30px'></i>
+          <div class='chart-wrap'>
+            <canvas id='cherry-chart'></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='product-divider'></div>
+    <div class="product-grid-outer">
+      <div class="product-text-img">
+        <div class="product-img-wrapper">
+          <div class="img-wrapper-inner">
+            <img src="../images/grape-bunch.jpeg" alt="Grape Bunch">
+          </div>
+        </div>
+        <div class="text-wrapper">
+          <p>Grapes</p>
+          <p>
+            Although they were introduced to America almost 300 years ago, grapes are one of the most sold fruit in the states. We specialize in packing the very best grapes that come to our center so we can guarantee the satisfaction of our customers. Among thousands of grape varieties, we focus on Cinsaut, Gamay, Mencia, Mandilaria, Bobal, Ciliegiolo, Scheurebe, and Aramon.
+          </p>
+          <p>
+            <button class="data-btn">View Data</button>
+          </p>
+        </div>
+        <div class='hell-wrap'>
+          <i class='fa fa-arrow-left' id='grape-arrow' style='font-size:30px'></i>
+          <div class='chart-wrap'>
+            <canvas id='grape-chart'></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class='product-divider'></div>
+    <div class="product-grid-outer">
+      <div class="product-text-img">
+        <div class="text-wrapper">
+          <p>Pears</p>
+          <p>
+            From July to August, Pears are the main focus in our shed. Considered a sacred fruit in Greek and Roman mythology, we also value the Pear for its resilient characteristics. Around half of all pears sold in the United States are packaged and shipped by River Packing. Our varieties include Bartletts, Comice, Sunsprite, Seckel, French Butter, Anjou, Starkrimson, and Asian.
+          </p>
+          <p>
+            <button class="data-btn">View Data</button>
+          </p>
+        </div>
+        <div class="product-img-wrapper">
+          <div class="img-wrapper-inner">
+            <img src="../images/pears-pic-one.jpg" alt="Pears">
+          </div>
+        </div>
+        <div class='hell-wrap'>
+          <i class='fa fa-arrow-left' id='pear-arrow' style='font-size:30px'></i>
+          <div class='chart-wrap'>
+            <canvas id='pear-chart'></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="quality-wrapper">
+    <h1 class='wrap-heading'>Quality Assurance</h1>
+    <div id="qa-grid">
+      <div>
+        <div class="qa-grid-box">
+          <p><i class="fa fa-cogs" style="font-size:80px"></i></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab, officia commodi velit sint animi voluptates odio maxime eaque quo est placeat, nemo quaerat, voluptatum magnam et. Rem aperiam ducimus similique dolorem quod impedit libero!
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="qa-grid-box">
+          <p><i class="fa fa-cogs" style="font-size:80px"></i></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab, officia commodi velit sint animi voluptates odio maxime eaque quo est placeat, nemo quaerat, voluptatum magnam et. Rem aperiam ducimus similique dolorem quod impedit libero!
+          </p>
+        </div>
+      </div>
+      <div>
+        <div class="qa-grid-box">
+          <p><i class="fa fa-cogs" style="font-size:80px"></i></p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ab, officia commodi velit sint animi voluptates odio maxime eaque quo est placeat, nemo quaerat, voluptatum magnam et. Rem aperiam ducimus similique dolorem quod impedit libero!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about-wrapper">
+    <h2>About Us</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, officia quam voluptates ipsam, minima sapiente vitae, doloremque facilis dolores ex libero obcaecati modi a atque numquam et, adipisci nulla quae dolorum optio explicabo repellendus quo accusamus. Alias voluptatem maxime necessitatibus id fugiat ad iste porro quidem! Repellendus autem dicta ullam quisquam incidunt eaque quia perspiciatis! Autem sequi, voluptatum aspernatur hic quasi, laborum facilis voluptas incidunt temporibus nesciunt rem, quo veniam expedita culpa.
+    </p>
+    <div id="people-grid">
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Donna Reynolds</p>
+        <p class="person-info">
+          Daughter of Don, co-founder of River Packing Co.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Fred Podesta III</p>
+        <p class="person-info">
+          The Podesta family’s diversified farming operation, Podesta Farms, are long-time partners with the River Packing Company.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Bruce Hinchman</p>
+        <p class="person-info">
+        <span><i class="fa fa-envelope"></i> : Bruce.h@mandrpacking.net</span><br/>
+        Bruce oversees sales and marketing for all commodities currently shipped by River Packing
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Jessica Podesta Costigliolo</p>
+        <p class="person-info">
+          Jessica leads the management department for food safety and quality assurance.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Brisa Silva</p>
+        <p class="person-info">
+          <span><i class="fa fa-envelope"></i> : Brisa.s@mandrpacking.net</span><br/>
+          Brisa handles customer relations and works with all of our export customers.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Max Hinchman</p>
+        <p class="person-info">
+          <span><i class="fa fa-envelope"></i> : Max.hinchman@gmail.com</span><br/>
+          Max works with export customers and closely with River Packing export production team.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Margie Vega</p>
+        <p class="person-info">
+          <span><i class="fa fa-envelope"></i> : Margie.v@mandrpacking.net</span><br/>
+          Margie oversees day to day operations dealing with domestic sales and delivered loads.
+        </p>
+      </div>
+      <div class="person-wrapper">
+        <img src="../images/loginUser.png" alt="User Icon"/>
+        <p class="person-name">Megan Cowan</p>
+        <p class="person-info">
+          <span><i class="fa fa-envelope"></i> : Megan.c@mandrpacking.net</span><br/>
+          Megan assists the sales team with domestic sales, and works on all of River Packing marketing.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact-wrapper">
+    <h2>Get in Touch</h2>
+    <div id="phone-email-wrapper">
+      <p><span><i class="fa fa-phone"></i></span> : (555) - 555 - 5555</p>
+      <p><span><i class="fa fa-envelope"></i></span> : contact@riverpacking.net</p>
+    </div>
+    <form action="send-message.php" method="POST" autocomplete="nope">
+      <div class="grid-2">
+        <input type="text" name="name" maxlength="30" placeholder="Full name" autocomplete="nope"/>
+        <input type="text" name="email" maxlength="40" placeholder="Email" autocomplete="nope"/>
+      </div>
+      <div class="grid-2">
+        <input type="text" name="phone" maxlength="20" placeholder="Phone" autocomplete="nope"/>
+        <input type="text" name="company" maxlength="20" placeholder="Company" autocomplete="nope"/>
+      </div>
+      <textarea name="message" cols="30" rows="10" placeholder="Message" autocomplete="nope"></textarea>
+      <input type="submit" name="submit" value="Send"/>
+    </form>
+  </section>
+
+  <section id='location-wrap'>
+    <h2>Location</h2>
+    <div id="address-wrapper">
+      <p><span><i className="fa fa-map-marker"></i></span>503 East Almond Street, Lodi, CA 95240</p>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2018 River Packing Co. All rights Reserved</p>
+  </footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="riverpacking.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrQVQzF7VuwHhRVfm7OykRl2puiMMGjEI&callback=initMap"></script>
+</body>
+</html>
