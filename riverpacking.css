@@ -370,45 +370,59 @@ nav li:hover:not(.user-entry) {
 #people-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  width: 100%;
-  height: 700px;
+  width: 80%;
+  height: 600px;
   margin: 30px auto;
 }
 .person-wrapper {
   position: relative;
-  border: 1px solid red;
+  border: 1px solid rgba(0,0,0,0.1);
 }
-.person-wrapper img {
-  width: 100px;
-  height: auto;
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: 1px solid rgba(0,0,0,0.2);
-  border-radius: 50%;
-}
-.person-name {
-  position: absolute;
-  top: 40%;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
-}
-.person-info {
+.person-img-name {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80%;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
   text-align: center;
 }
+.person-img-name img {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+.person-info {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  background-color: rgb(39, 174, 96);
+  text-align: center;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.person-info p {
+  color: #fff;
+  font-weight: bold;
+  padding: 30% 15px 0;
+  opacity: 0;
+  line-height: 30px;
+  transition: 0.3s;
+}
+.person-wrapper:hover > .person-info {
+  height: 100%;
+}
+.person-wrapper:hover .person-info > p {
+  opacity: 1;
+}
+
 
 /* Contact */
 #contact-wrapper {
   width: 100%;
   height: auto;
-  background-color: rgba(0,0,0,0.1);
   padding: 50px;
 }
 
@@ -474,7 +488,7 @@ nav li:hover:not(.user-entry) {
   text-align: center;
 }
 #address-wrapper {
-  width: 50%;
+  width: 400px;
   background-color: black;
   border-radius: 4px;
   margin: auto;
