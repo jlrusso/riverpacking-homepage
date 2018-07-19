@@ -26,17 +26,17 @@ $("#nav-qa").click(function(){
 });
 $("#nav-about").click(function(){
   $("html, body").animate({
-    scrollTop: $("#about-wrapper").offset().top - 90
+    scrollTop: $("#about-wrapper").offset().top - 70
   }, "slow");
 });
 $("#nav-contact").click(function(){
   $("html, body").animate({
-    scrollTop: $("#contact-wrapper").offset().top
+    scrollTop: $("#contact-wrapper").offset().top - 55
   }, "slow");
 });
 $("#nav-location").click(() => {
   $("html, body").animate({
-    scrollTop: $("#location-wrap").offset().top
+    scrollTop: $("#location-wrap").offset().top - 30
   });
 });
 var learnBtn = document.getElementById("learn-btn");
@@ -148,7 +148,7 @@ var barChart = new Chart(outputChart, {
     responsive: true,
     maintainAspectRation: false,
     onResize: function(){
-      console.log("chart resized");
+      //console.log("chart resized");
     },
     legend: {
       //display: false,
