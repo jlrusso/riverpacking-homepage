@@ -1,4 +1,7 @@
 /* Global Styling */
+:root {
+  --main-green-color: rgb(39, 174, 96);
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -16,11 +19,9 @@ li {
     margin: 0;
     padding: 0;
 }
-::-webkit-scrollbar {
-  display: none;
-}
 .wrap-heading {
   text-align: center;
+  font-size: 2.5rem;
 }
 /* Landing Section Styling */
 #landing-wrapper {
@@ -29,7 +30,7 @@ li {
   left: 0;
   width: 100%;
   height: 100vh;
-  background: url("../images/cherry-branch.jpg");
+  background: url("../images/agriculture-pic-6.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -42,7 +43,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.5);
   z-index: 0;
 }
 header {
@@ -232,7 +233,7 @@ nav li:hover:not(.user-entry) {
   width: 100%;
   height: auto;
   background-color: #fff;
-  padding: 50px;
+  padding: 50px 75px;
 }
 .product-grid-outer {
   position: relative;
@@ -287,8 +288,11 @@ nav li:hover:not(.user-entry) {
   transform: translate(-50%,-50%);
 }
 .img-wrapper-inner img {
+  display: block;
   width: 100%;
   height: auto;
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--main-green-color);
 }
 .hell-wrap {
   position: relative;
@@ -324,29 +328,79 @@ nav li:hover:not(.user-entry) {
 #quality-wrapper {
   width: 100%;
   height: auto;
-  background: rgba(0,0,0,0.1);
-  padding: 50px;
+  padding: 20px;
 }
 #qa-grid {
   width: 100%;
   height: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid red;
-  padding: 50px;
+  padding: 0 50px 50px;
 }
-#qa-grid div {
+#qa-grid > div {
   width: 100%;
-  height: auto;
-  border: 1px solid blue;
+  height: 400px;
   padding: 25px;
 }
-.qa-grid-box > p {
+.qa-heading {
   text-align: center;
 }
-.qa-grid-box p:nth-child(2) {
-  line-height: 35px;
+.qa-grid-box {
+  position: relative;
+  height: 100%;
+  padding: 20px 0;
+  border-radius: 5px;
+  overflow: hidden;
 }
+#agri-box {
+  background: url("../images/agriculture-pic-5.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#manu-box {
+  background: url("../images/manufacture-pic-1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#tech-box {
+  background: url("../images/technology-pic-1.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.grid-box-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 0;
+}
+.grid-box-content {
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.grid-box-content > h2 {
+  color: #fff;
+}
+.grid-box-content > p {
+  text-align: center;
+  color: #fff;
+}
+.qa-grid-box p:last-child {
+  line-height: 30px;
+}
+#quality-wrapper .fa {
+  color: var(--main-green-color);
+} 
+
 
 /* About */
 #about-wrapper {
@@ -361,7 +415,7 @@ nav li:hover:not(.user-entry) {
 #about-wrapper h2 {
   text-align: center;
 }
-#about-wrapper > p {
+#about-wrapper > p:nth-child(2) {
   width: 65%;
   margin: auto;
   text-align: center;
@@ -371,12 +425,12 @@ nav li:hover:not(.user-entry) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 80%;
-  height: 600px;
+  height: 500px;
+  border: 1px solid rgba(0,0,0,0.1);
   margin: 30px auto;
 }
 .person-wrapper {
   position: relative;
-  border: 1px solid rgba(0,0,0,0.1);
 }
 .person-img-name {
   position: absolute;
@@ -387,7 +441,8 @@ nav li:hover:not(.user-entry) {
   text-align: center;
 }
 .person-img-name img {
-  width: 50%;
+  width: 120px;
+  border-radius: 50%;
   height: auto;
   margin: auto;
 }
@@ -398,15 +453,15 @@ nav li:hover:not(.user-entry) {
   left: 0;
   width: 100%;
   height: 0px;
-  background-color: rgb(39, 174, 96);
+  background-color: rgba(39, 174, 96, 0.95);
   text-align: center;
   overflow: hidden;
   transition: 0.3s;
 }
-.person-info p {
+.person-info > p {
   color: #fff;
   font-weight: bold;
-  padding: 30% 15px 0;
+  padding: 25% 15px 0;
   opacity: 0;
   line-height: 30px;
   transition: 0.3s;
@@ -500,7 +555,7 @@ nav li:hover:not(.user-entry) {
 }
 #map {
   width: 100%;
-  height: 500px;
+  height: 425px;
 }
 /* Start of Footer Section */
 footer {
