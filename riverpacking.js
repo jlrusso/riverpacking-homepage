@@ -2,6 +2,12 @@ window.onbeforeunload = function(){
   window.scrollTo(0, 0);
 }
 const headerWrapper = document.getElementById("header-wrapper");
+const toTopBtn = document.getElementById("to-top-btn");
+toTopBtn.addEventListener("click", () =>{
+  $("html, body").animate({
+    scrollTop: $("html, body").offset().top
+  });
+});
 window.addEventListener("scroll", function(){
   var scrollT = document.documentElement.scrollTop;
   signUpWrapper.style.right = "-400px";
@@ -10,8 +16,10 @@ window.addEventListener("scroll", function(){
   loginArrowRight.style.display = "none";
   if(scrollT > 155){
     headerWrapper.style.backgroundColor = "black";
+    toTopBtn.style.right = "20px";
   } else {
     headerWrapper.style.backgroundColor = "transparent";
+    toTopBtn.style.right = "-50px";
   }
 });
 $("#nav-products").click(function(){
