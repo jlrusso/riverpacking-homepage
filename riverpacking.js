@@ -36,7 +36,7 @@ $("#nav-contact").click(function(){
 });
 $("#nav-location").click(() => {
   $("html, body").animate({
-    scrollTop: $("#location-wrap").offset().top - 30
+    scrollTop: $("#location-wrap").offset().top
   });
 });
 var learnBtn = document.getElementById("learn-btn");
@@ -147,9 +147,6 @@ var barChart = new Chart(outputChart, {
     },
     responsive: true,
     maintainAspectRation: false,
-    onResize: function(){
-      //console.log("chart resized");
-    },
     legend: {
       //display: false,
       //position: 'right',
@@ -223,9 +220,6 @@ var barChart = new Chart(outputChart, {
     },
     responsive: true,
     maintainAspectRation: false,
-    onResize: function(){
-      console.log("chart resized");
-    },
     legend: {
       //display: false,
       //position: 'right',
@@ -299,9 +293,6 @@ var barChart = new Chart(outputChart, {
     },
     responsive: true,
     maintainAspectRation: false,
-    onResize: function(){
-      console.log("chart resized");
-    },
     legend: {
       //display: false,
       //position: 'right',
