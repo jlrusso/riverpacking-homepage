@@ -16,7 +16,7 @@ window.addEventListener("scroll", function(){
   loginArrowRight.style.display = "none";
   if(scrollT > 155){
     headerWrapper.style.backgroundColor = "black";
-    toTopBtn.style.right = "20px";
+    toTopBtn.style.right = "10px";
   } else {
     headerWrapper.style.backgroundColor = "transparent";
     toTopBtn.style.right = "-50px";
@@ -92,14 +92,14 @@ orSignupBtn.addEventListener("click", function(){
 })
 /* Start of Location/Map Section */
 function initMap(){
-  var mrLatLng = {lat: 38.126999, lng: -121.271420};
+  var coords = {lat: 38.126999, lng: -121.271420};
   var centerZoom = {
-    center: mrLatLng,
+    center: coords,
     zoom: 14
   }
   var map = new google.maps.Map(document.getElementById("map"), centerZoom);
   var marker = new google.maps.Marker({
-    position: mrLatLng,
+    position: coords,
     map: map,
   });
 }
@@ -121,30 +121,17 @@ for(let i = 0; i < leftArrows.length; i++){
 };
 /* Start of Cherry Chart JS */
 var outputChart = document.getElementById("cherry-chart").getContext('2d');
-var cherryVals = [150000, 50000, 100000, 200000, 10000, 400000, 70000, 30000];
-Chart.defaults.global.defaultFontSize =  13;
-Chart.defaults.global.defaultFontColor = '#777';
 var barChart = new Chart(outputChart, {
-  type: 'bar', //'bar', 'horizontalBar', 'pie', 'line', 'doughnut', 'radar', 'polarArea'
+  type: 'bar',
   data: {
     labels: ["Brooks", "Royal Hazel", "Tulare", "Coral", "Chelan", "Bing", "Lapin", "Rainier"],
     datasets: [{
         label: 'Expected Output',
-        data: [
-          cherryVals[0],
-          cherryVals[1],
-          cherryVals[2],
-          cherryVals[3],
-          cherryVals[4],
-          cherryVals[5],
-          cherryVals[6],
-          cherryVals[7]
-        ],
+        data: [150000, 50000, 100000, 200000, 10000, 400000, 70000, 30000],
         backgroundColor: 'rgba(217, 136, 128, 0.2)',
         borderWidth: 1,
         borderColor: 'rgb(217, 136, 128)',
-        hoverBorderWidth: 3,
-        // hoverBorderColor: 'red'
+        hoverBorderWidth: 3
     }]
   },
   options: {
@@ -156,20 +143,8 @@ var barChart = new Chart(outputChart, {
     responsive: true,
     maintainAspectRation: false,
     legend: {
-      //display: false,
-      //position: 'right',
       labels: {
         fontColor: 'black'
-      }
-    },
-    layout: {
-      padding: {
-        /*
-          right: 50,
-          left: 50,
-          bottom: 50,
-          top: 50
-        */
       }
     },
     tooltips: {
@@ -194,30 +169,20 @@ var barChart = new Chart(outputChart, {
     }
   }
 });
+
 /* Start of Grapes Chart */
 var outputChart = document.getElementById("grape-chart").getContext('2d');
-var grapeVals = [100000, 80000, 210000, 145000, 160000, 95000, 45000, 170000];
 var barChart = new Chart(outputChart, {
-  type: 'bar', //'bar', 'horizontalBar', 'pie', 'line', 'doughnut', 'radar', 'polarArea'
+  type: 'bar',
   data: {
     labels: ["Cinsaut", "Gamay", "Mencia", "Mandilaria", "Bobal", "Ciliegiolo", "Scheurebe", "Aramon"],
     datasets: [{
         label: 'Expected Output',
-        data: [
-          grapeVals[0],
-          grapeVals[1],
-          grapeVals[2],
-          grapeVals[3],
-          grapeVals[4],
-          grapeVals[5],
-          grapeVals[6],
-          grapeVals[7]
-        ],
+        data: [100000, 80000, 210000, 145000, 160000, 95000, 45000, 170000],
         backgroundColor: 'rgba(46, 204, 113, 0.2)',
         borderWidth: 1,
         borderColor: 'rgb(46, 204, 113)',
-        hoverBorderWidth: 3,
-        // hoverBorderColor: 'red'
+        hoverBorderWidth: 3
     }]
   },
   options: {
@@ -229,20 +194,8 @@ var barChart = new Chart(outputChart, {
     responsive: true,
     maintainAspectRation: false,
     legend: {
-      //display: false,
-      //position: 'right',
       labels: {
         fontColor: 'black'
-      }
-    },
-    layout: {
-      padding: {
-        /*
-          right: 50,
-          left: 50,
-          bottom: 50,
-          top: 50
-        */
       }
     },
     tooltips: {
@@ -267,30 +220,20 @@ var barChart = new Chart(outputChart, {
     }
   }
 });
+
 /* Start of Pear Chart */
 var outputChart = document.getElementById("pear-chart").getContext('2d');
-var pearVals = [30000, 50000, 100000, 15000, 60000, 130000, 200000, 180000];
 var barChart = new Chart(outputChart, {
-  type: 'bar', //'bar', 'horizontalBar', 'pie', 'line', 'doughnut', 'radar', 'polarArea'
+  type: 'bar',
   data: {
     labels: ["Bartletts", "Comice", "Sunsprite", "Seckel", "French Butter", "Anjou", "Starkrimson", "Asian"],
     datasets: [{
         label: 'Expected Output',
-        data: [
-          pearVals[0],
-          pearVals[1],
-          pearVals[2],
-          pearVals[3],
-          pearVals[4],
-          pearVals[5],
-          pearVals[6],
-          pearVals[7]
-        ],
+        data: [30000, 50000, 100000, 15000, 60000, 130000, 200000, 180000],
         backgroundColor: 'rgba(241, 196, 15, 0.2)',
         borderWidth: 1,
         borderColor: 'rgb(241, 196, 15)',
-        hoverBorderWidth: 3,
-        // hoverBorderColor: 'red'
+        hoverBorderWidth: 3
     }]
   },
   options: {
@@ -302,20 +245,8 @@ var barChart = new Chart(outputChart, {
     responsive: true,
     maintainAspectRation: false,
     legend: {
-      //display: false,
-      //position: 'right',
       labels: {
         fontColor: 'black'
-      }
-    },
-    layout: {
-      padding: {
-        /*
-          right: 50,
-          left: 50,
-          bottom: 50,
-          top: 50
-        */
       }
     },
     tooltips: {
