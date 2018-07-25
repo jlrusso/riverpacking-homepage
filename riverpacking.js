@@ -1,7 +1,7 @@
 window.onbeforeunload = function(){
   window.scrollTo(0, 0);
 }
-const headerWrapper = document.getElementById("header-wrapper");
+var headerWrapper = document.getElementById("header-wrapper");
 const toTopBtn = document.getElementById("to-top-btn");
 toTopBtn.addEventListener("click", () =>{
   $("html, body").animate({
@@ -10,16 +10,12 @@ toTopBtn.addEventListener("click", () =>{
 });
 window.addEventListener("scroll", function(){
   var scrollT = document.documentElement.scrollTop;
-  joinWrapper.style.right = "-400px";
-  loginWrapper.style.right = "-400px";
-  suArrowRight.style.display = "none";
-  loginArrowRight.style.display = "none";
-  if(scrollT > 155){
-    headerWrapper.style.backgroundColor = "black";
-    toTopBtn.style.right = "10px";
+  if(scrollT > 130){
+    headerWrapper.classList.add("active");
+    toTopBtn.classList.add("active");
   } else {
-    headerWrapper.style.backgroundColor = "transparent";
-    toTopBtn.style.right = "-50px";
+    headerWrapper.classList.remove("active");
+    toTopBtn.classList.remove("active");
   }
 });
 $("#nav-products").click(function(){
@@ -92,6 +88,15 @@ var mobileNav = document.getElementById("mobile-nav");
 burgerWrap.addEventListener("click", () => {
   burgerWrap.classList.toggle("active");
   mobileNav.classList.toggle("active");
+});
+
+/* Window Resize Function to Close Mobile Nav if Opened */
+window.addEventListener("resize", () => {
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if(windowWidth > 840 && mobileNav.classList.contains("active")){
+    mobileNav.classList.remove("active");
+    burgerWrap.classList.remove("active");
+  }
 });
 
 /* Vert User Entry Btn Vars and Assoc Functions */
