@@ -59,6 +59,9 @@ header {
   height: 75px;
   transition: 0.3s;
 }
+#header-wrapper.active {
+  background-color: black !important;
+}
 #header-logo {
   width: 100px;
   height: auto;
@@ -711,8 +714,11 @@ footer p {
   border: none;
   border-radius: 5px;
   padding: 5px 15px 10px;
-  transition: 0.4s;
+  transition: 0.2s;
   cursor: pointer;
+}
+#to-top-btn.active {
+  right: 10px;
 }
 #to-top-btn:focus {
   outline: none;
@@ -724,6 +730,11 @@ footer p {
 }
 
 /* Start of Media Styling */
+@media screen and (max-width: 900px) {
+  #why-wrap {
+    width: 85%;
+  }
+}
 @media screen and (max-width: 840px) {
   nav,
   #user-entry-wrapper {
@@ -732,12 +743,6 @@ footer p {
   #burger-wrap,
   #mobile-nav {
     display: block;
-  }
-}
-@media screen and (max-width: 500px) {
-  #login-wrapper,
-  #join-wrapper {
-    width: 100%;
   }
 }
 @media screen and (max-width: 600px) {
@@ -750,7 +755,17 @@ footer p {
   #burger-wrap {
     right: 20px;
   }
+  #why-wrap {
+    width: 90%;
+  }
 }
+@media screen and (max-width: 500px) {
+  #login-wrapper,
+  #join-wrapper {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 450px) {
   #hero-text > p:nth-of-type(2) {
     font-size: 1rem;
@@ -768,9 +783,15 @@ footer p {
     border-radius: 0;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 410px) {
   #hero-text > p:first-of-type {
     font-size: 2rem;
+  }
+  #why-wrap {
+    width: 95%;
+  }
+  #why-wrap .wrap-heading {
+    font-size: 1.9rem;
   }
 }
 @media screen and (max-width: 350px) {
