@@ -537,7 +537,7 @@ nav li:hover:not(.user-entry) {
   position: relative;
   width: 100%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 0;
 }
 #location-wrap h2 {
   text-align: center;
@@ -571,7 +571,7 @@ footer p {
 }
 #to-top-btn {
   position: fixed;
-  bottom: 20px;
+  bottom: 10px;
   right: -50px;
   background: rgba(0,0,0,0.6);
   border: none;
@@ -587,4 +587,21 @@ footer p {
   font-size: 30px;
   color: #fff;
   font-weight: bold;
+}
+
+/* Start of Media Styling */
+@media screen and (max-width: 450px) {
+  #address-wrapper {
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+  }
+  #address-wrapper p {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  #address-wrapper p {
+    font-size: 0.95rem;
+  }
 }
