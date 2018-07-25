@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+  <link href="../c3/c3.css" rel="stylesheet">
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="riverpacking.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="../d3.min.js"></script>
+  <script src="../c3.min.js"></script>
   <title>River Packing Co.</title>
 </head>
 <body>
@@ -102,6 +105,7 @@
         <div class='hell-wrap'>
           <i class='fa fa-arrow-left' id='cherry-arrow' style='font-size:30px'></i>
           <div class='chart-wrap'>
+            <div id='cherry-donut-chart'></div>
             <canvas id='cherry-chart'></canvas>
           </div>
         </div>
@@ -127,6 +131,7 @@
         <div class='hell-wrap'>
           <i class='fa fa-arrow-left' id='grape-arrow' style='font-size:30px'></i>
           <div class='chart-wrap'>
+            <div id="grape-donut-chart"></div>
             <canvas id='grape-chart'></canvas>
           </div>
         </div>
@@ -152,6 +157,7 @@
         <div class='hell-wrap'>
           <i class='fa fa-arrow-left' id='pear-arrow' style='font-size:30px'></i>
           <div class='chart-wrap'>
+            <div id="pear-donut-chart"></div>
             <canvas id='pear-chart'></canvas>
           </div>
         </div>
@@ -325,7 +331,7 @@
   <button id='to-top-btn'><i class='fa fa-angle-up'></i></button>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
   <script src="riverpacking.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDrQVQzF7VuwHhRVfm7OykRl2puiMMGjEI&callback=initMap"></script>
 </body>
