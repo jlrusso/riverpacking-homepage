@@ -10,7 +10,7 @@ toTopBtn.addEventListener("click", () =>{
 });
 window.addEventListener("scroll", function(){
   var scrollT = document.documentElement.scrollTop;
-  signUpWrapper.style.right = "-400px";
+  joinWrapper.style.right = "-400px";
   loginWrapper.style.right = "-400px";
   suArrowRight.style.display = "none";
   loginArrowRight.style.display = "none";
@@ -56,41 +56,34 @@ learnBtn.addEventListener("click", function(){
 
 
 // Sign up and Login Sections
-var signInBtn = document.getElementById("sign-in-btn"),
+const signInBtn = document.getElementById("sign-in-btn"),
     loginWrapper = document.getElementById("login-wrapper"),
     joinBtn = document.getElementById("join-btn"),
-    signUpWrapper = document.getElementById("sign-up-wrapper"),
+    joinWrapper = document.getElementById("join-wrapper"),
     loginArrowRight = document.getElementById("login-arrow-right"),
     suArrowRight = document.getElementById("su-arrow-right");
 joinBtn.addEventListener("click", function(){
-  signUpWrapper.style.right = "0px";
-  suArrowRight.style.display = "block";
-})
+  joinWrapper.classList.toggle("active");
+});
 suArrowRight.addEventListener("click", function(){
-  signUpWrapper.style.right = "-400px";
-  suArrowRight.style.display = "none";
-})
+  joinWrapper.classList.toggle("active");
+});
 signInBtn.addEventListener("click", function(){
-  loginWrapper.style.right = "0px";
-  loginArrowRight.style.display = "block";
-})
+  loginWrapper.classList.toggle("active");
+});
 loginArrowRight.addEventListener("click", function(){
-  loginWrapper.style.right = "-400px";
-  loginArrowRight.style.display = "none";
-})
-var orLoginBtn = document.getElementById("or-login-btn"),
-    orSignupBtn = document.getElementById("or-signup-btn");
+  loginWrapper.classList.toggle("active");
+});
+
+const orLoginBtn = document.getElementById("or-login-btn"),
+      orSignupBtn = document.getElementById("or-signup-btn");
 orLoginBtn.addEventListener("click", function(){
-  signUpWrapper.style.right = "-400px";
-  suArrowRight.style.display = "none";
-  loginWrapper.style.right = "0px";
-  loginArrowRight.style.display = "block";
+  joinWrapper.classList.toggle("active");
+  loginWrapper.classList.toggle("active");
 });
 orSignupBtn.addEventListener("click", function(){
-  loginWrapper.style.right = "-400px";
-  loginArrowRight.style.display = "none";
-  signUpWrapper.style.right = "0px";
-  suArrowRight.style.display = "block";
+  loginWrapper.classList.toggle("active");
+  joinWrapper.classList.toggle("active");
 })
 
 /* Start of Burger, Mobile Nav Vars and Functions */
@@ -100,6 +93,17 @@ burgerWrap.addEventListener("click", () => {
   burgerWrap.classList.toggle("active");
   mobileNav.classList.toggle("active");
 });
+
+/* Vert User Entry Btn Vars and Assoc Functions */
+const vertLoginBtn = document.getElementById("vert-login-btn");
+const vertJoinBtn = document.getElementById("vert-join-btn");
+vertLoginBtn.addEventListener("click", () => {
+  loginWrapper.classList.toggle("active");
+});
+vertJoinBtn.addEventListener("click", () => {
+  joinWrapper.classList.toggle("active");
+})
+
 
 /* Start of Location/Map Section */
 function initMap(){
