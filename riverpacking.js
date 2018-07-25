@@ -93,6 +93,13 @@ orSignupBtn.addEventListener("click", function(){
   suArrowRight.style.display = "block";
 })
 
+/* Start of Burger, Mobile Nav Vars and Functions */
+var burgerWrap = document.getElementById("burger-wrap");
+var mobileNav = document.getElementById("mobile-nav");
+burgerWrap.addEventListener("click", () => {
+  burgerWrap.classList.toggle("active");
+  mobileNav.classList.toggle("active");
+});
 
 /* Start of Location/Map Section */
 function initMap(){
