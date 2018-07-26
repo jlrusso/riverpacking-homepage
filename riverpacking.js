@@ -90,14 +90,6 @@ burgerWrap.addEventListener("click", () => {
   mobileNav.classList.toggle("active");
 });
 
-/* Window Resize Function to Close Mobile Nav if Opened */
-window.addEventListener("resize", () => {
-  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  if(windowWidth > 840 && mobileNav.classList.contains("active")){
-    mobileNav.classList.remove("active");
-    burgerWrap.classList.remove("active");
-  }
-});
 
 /* Vert User Entry Btn Vars and Assoc Functions */
 const vertLoginBtn = document.getElementById("vert-login-btn");
@@ -144,24 +136,16 @@ for(let i = 0; i < leftArrows.length; i++){
   });
 };
 
-/* Start of Creating Bar or Donut Charts based on window width */
-window.addEventListener("load", function(){
-  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-  if(windowWidth < 820){
-    createCherryDonut();
-    createGrapeDonut();
-    createPearDonut();
-  } else {
-    createCherryBar();
-    createGrapeBar();
-    createPearBar();
-  }
-});
-
 
 /* Start of Cherry Chart JS */
+var cherryDonutChart = document.getElementById("cherry-donut-chart");
+var cherryBarChart = document.getElementById("cherry-bar-chart");
 function createCherryDonut(){
-  var cherryDonutChart = c3.generate({
+  cherryDonutChart.classList.add("active");
+  if(cherryBarChart.classList.contains("active")){
+    cherryBarChart.classList.remove("active");
+  }  
+  var chart = c3.generate({
     bindto: '#cherry-donut-chart',
     data: {
       columns: [
@@ -186,8 +170,12 @@ function createCherryDonut(){
 }
 
 function createCherryBar(){
-  var outputChart = document.getElementById("cherry-chart").getContext('2d');
-  var barChart = new Chart(outputChart, {
+  cherryBarChart.classList.add("active");
+  if(cherryDonutChart.classList.contains("active")){
+    cherryDonutChart.classList.remove("active");
+  }  
+  var barChart = document.getElementById("cherry-bar-chart").getContext('2d');
+  var chart = new Chart(barChart, {
     type: 'bar',
     data: {
       labels: ["Brooks", "Royal Hazel", "Tulare", "Coral", "Chelan", "Bing", "Lapin", "Rainier"],
@@ -238,10 +226,15 @@ function createCherryBar(){
 }
 
 
-
 /* Start of Grapes Chart */
+const grapeDonutChart = document.getElementById("grape-donut-chart");
+const grapeBarChart = document.getElementById("grape-bar-chart");
 function createGrapeDonut(){
-  var grapeDonutChart = c3.generate({
+  grapeDonutChart.classList.add("active");
+  if(grapeBarChart.classList.contains("active")){
+    grapeBarChart.classList.remove("active");
+  }
+  var chart = c3.generate({
     bindto: '#grape-donut-chart',
     data: {
       columns: [
@@ -262,12 +255,15 @@ function createGrapeDonut(){
         format: function (value) {return value;}
       }
     }
-  })
+  });
 }
-
 function createGrapeBar(){
-  var outputChart = document.getElementById("grape-chart").getContext('2d');
-  var barChart = new Chart(outputChart, {
+  grapeBarChart.classList.add("active");
+  if(grapeDonutChart.classList.contains("active")){
+    grapeDonutChart.classList.remove("active");
+  }
+  var barChart = document.getElementById("grape-bar-chart").getContext('2d');
+  var chart = new Chart(barChart, {
     type: 'bar',
     data: {
       labels: ["Cinsaut", "Gamay", "Mencia", "Mandilaria", "Bobal", "Ciliegiolo", "Scheurebe", "Aramon"],
@@ -318,10 +314,15 @@ function createGrapeBar(){
 }
 
 
-
 /* Start of Pear Chart */
+const pearDonutChart = document.getElementById("pear-donut-chart");
+const pearBarChart = document.getElementById("pear-bar-chart");
 function createPearDonut(){
-  var pearDonutChart = c3.generate({
+  pearDonutChart.classList.add("active");
+  if(pearBarChart.classList.contains("active")){
+    pearBarChart.classList.remove("active");
+  }
+  var chart = c3.generate({
     bindto: '#pear-donut-chart',
     data: {
       columns: [
@@ -346,8 +347,12 @@ function createPearDonut(){
 }
 
 function createPearBar(){
-  var outputChart = document.getElementById("pear-chart").getContext('2d');
-  var barChart = new Chart(outputChart, {
+  pearBarChart.classList.add("active");
+  if(pearDonutChart.classList.contains("active")){
+    pearDonutChart.classList.remove("active");
+  }
+  var barChart = document.getElementById("pear-bar-chart").getContext('2d');
+  var chart = new Chart(barChart, {
     type: 'bar',
     data: {
       labels: ["Bartletts", "Comice", "Sunsprite", "Seckel", "French Butter", "Anjou", "Starkrimson", "Asian"],
@@ -397,3 +402,93 @@ function createPearBar(){
   });
 }
 
+/* Clone Product Imgs and Headings for appending when window width < 840px  */
+var cherryTextImg = document.getElementById("cherry-text-img");
+var grapeTextImg = document.getElementById("grape-text-img");
+var pearTextImg = document.getElementById("pear-text-img");
+var cherryImgWrapper = document.getElementById("cherry-img-wrapper");
+var grapeImgWrapper = document.getElementById("grape-img-wrapper");
+var pearImgWrapper = document.getElementById("pear-img-wrapper");
+var cherryHeading = document.getElementById("cherry-heading");
+var grapeHeading = document.getElementById("grape-heading");
+var pearHeading = document.getElementById("pear-heading");
+var cherryImgClone = cherryImgWrapper.cloneNode(true);
+var grapeImgClone = grapeImgWrapper.cloneNode(true);
+var pearImgClone = pearImgWrapper.cloneNode(true);
+var cherryHeadingClone = cherryHeading.cloneNode(true);
+var grapeHeadingClone = grapeHeading.cloneNode(true);
+var pearHeadingClone = pearHeading.cloneNode(true);
+
+/* Start of Creating Bar or Donut Charts based on window width */
+window.addEventListener("load", function(){
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if(windowWidth < 905){
+    createCherryDonut();
+    createGrapeDonut();
+    createPearDonut();
+    hideDefaultHeadingsAndImgs();
+    changeProductLayout();
+  } else {
+    createCherryBar();
+    createGrapeBar();
+    createPearBar();
+  }
+});
+
+/* Window Resize Function to Close Mobile Nav if Opened */
+window.addEventListener("resize", () => {
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  if(windowWidth > 905){
+    if(mobileNav.classList.contains("active")){
+      mobileNav.classList.remove("active");
+      burgerWrap.classList.remove("active");
+    }    
+    createCherryBar();
+    createGrapeBar();
+    createPearBar();
+    removeProductClones();
+    resetProductLayout();
+  } else {
+    createCherryDonut();
+    createGrapeDonut();
+    createPearDonut();
+    hideDefaultHeadingsAndImgs();
+    changeProductLayout();
+  }
+});
+
+function hideDefaultHeadingsAndImgs(){
+  cherryImgWrapper.classList.add("inactive");
+  grapeImgWrapper.classList.add("inactive");
+  pearImgWrapper.classList.add("inactive");
+  cherryHeading.classList.add("inactive");
+  grapeHeading.classList.add("inactive");
+  pearHeading.classList.add("inactive");
+}
+
+function changeProductLayout(){
+  cherryTextImg.prepend(cherryHeadingClone);
+  cherryHeadingClone.after(cherryImgClone);
+  grapeTextImg.prepend(grapeHeadingClone);
+  grapeHeadingClone.after(grapeImgClone);
+  pearTextImg.prepend(pearHeadingClone);
+  pearHeadingClone.after(pearImgClone);
+}
+
+function removeProductClones(){
+  cherryHeadingClone.remove();
+  grapeHeadingClone.remove();
+  pearHeadingClone.remove();
+  cherryImgClone.remove();
+  grapeImgClone.remove();
+  pearImgClone.remove();
+}
+
+function resetProductLayout(){
+  cherryImgWrapper.classList.remove("inactive");
+  grapeImgWrapper.classList.remove("inactive");
+  pearImgWrapper.classList.remove("inactive");
+  cherryHeading.classList.remove("inactive");
+  grapeHeading.classList.remove("inactive");
+  pearHeading.classList.remove("inactive");
+}
